@@ -1,0 +1,107 @@
+@import "variables"; 
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+.container {
+  max-width: 1200px;
+}
+.DesignGrid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+  // background-color: #eee;
+}
+
+.DesignItem {
+  position: relative; 
+  min-width: 300px;
+  flex-basis: 25%;
+  margin: 10px;
+
+  img {
+    width: 100%;
+  }
+}
+
+@mixin Overlay($color){
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $color;
+  transition: .5s ease;
+  opacity: 0;
+
+  color: white;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.DarkOverlay {
+  @include Overlay(rgba(0,0,0, .5));
+
+}
+
+.LightOverlay {
+  @include Overlay(rgba(0,0,0, .2));
+
+}
+
+
+.redux-infinite-scroll {
+  overflow: hidden;
+}
+
+.ImageHolder {
+  width: 100%;
+
+  img {
+    border: 1px solid $primary-color;
+    max-width:100%;
+  }
+
+  input[type="file"] {
+    display: block;
+  }
+}
+
+.TopNav {
+  .Heading{
+    font-weight: bold;
+    display:inline-block;
+    margin: 0 20px 0 0;
+  }
+  padding: 10px;
+  background-color: $primary-color;
+  ul {
+    display:inline;
+    text-align: center;
+    list-style: none;
+  }
+  li {
+    margin: 0 10px 0 10px;
+    display: inline-block;
+  }
+  a {
+    display:block;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.ActiveLink {
+  color: $secondary-color !important;
+}
